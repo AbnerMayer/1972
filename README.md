@@ -1,49 +1,27 @@
-# 1972 - Criando APIs com NodeJs
+# Java Koans 
 
-### LINK PARA OS VÍDEOS
-Você pode assistir os vídeos deste curso sendo um assinante do site http://balta.io.
+[![Build Status](https://travis-ci.org/matyb/java-koans.png?branch=master)](https://travis-ci.org/matyb/java-koans)
 
-http://player.balta.io/#/courses/1972
+Running Instructions:
+=====================
+* Download and unarchive the contents of the most recent java-koans in development from:
+https://github.com/matyb/java-koans/archive/master.zip
+* Open a terminal and cd to the directory you unarchived:
+```cd <the directory you just unarchived>```
+* Within it you'll find:
+    * *koans*: this directory contains the application and its lessons, it is all that is needed to advance through the koans themselves and **it can be distributed independently**
+    * *lib*: this directory contains the code the koans engine is comprised of and built with
+    * *gradle*: wrapper for build library used to build koans source, setup project files in eclipse/idea, run tests, etc. you probably don't need to touch anything in here
+* Change directory to the koans directory: ```cd koans```
+* If you are using windows enter: ```run.bat``` or ```./run.sh``` if you are using Mac or Linux
 
-### Sumário
-Neste curso vamos unir a popularidade das APIs com a popularidade do JavaScript criando uma API completa com NodeJs, passando pelos principais pontos que você precisa conhecer para colocar seu projeto em produção.
+Developing a Koan:
+==================
+* Follow any of the existing koans as an example to create a new class with koan methods (indicated by the @Koan annotation, they're public and specify no arguments)
+* Define the order the koan suite (if it's new) will run in the koans/app/config/PathToEnlightenment.xml file
+* [Override the lesson text](https://github.com/matyb/java-koans/blob/master/koans/app/config/i18n/messages_en.properties#L1) when it fails (default is expected 'X' found 'Y')
+* Optionally you may use dynamic content in your lesson, examples are located in the XmlVariableInjector class (and Test) and the AboutKoans.java file
 
-### Conteúdo Programático
-* Instalação Node, NPM e VS Code
-* npm init e instalação dos pacotes
-* Criando um servidor Web
-* Normalizando a porta
-* Gerenciando Erros do Servidor
-* Iniciando o Debug
-* Separando o Servidor
-* Configurando o NPM Start
-* Nodemon
-* CRUD REST
-* Rotas
-* Controllers
-* MongoDb Setup
-* Mongooose
-* Models
-* Criando um Produto
-* Listando os Produtos
-* Listando um Produto pelo slug
-* Listando um Produto pelo Id
-* Listando os Produtos de uma tag
-* Atualizando um produto
-* Excluindo um produto
-* Validações
-* Repositórios
-* Async/Await
-* Revisitando os Models: Customer
-* Revisitando os Models: Order
-* Revisitando os Models: OrderItems
-* Revisitando os Controllers: Customer
-* Revisitando os Controllers: Order
-* Arquivo de Configurações
-* Enviando E-mail de Boas Vindas
-* Upload da Imagem do Produto
-* Autenticação
-* Autorização
-* Habilitando CORS
-* Publicando a API
-
+Something's wrong:
+==================
+* If the koans app is constantly timing out compiling a koan, your computer may be too slow to compile the koan classes with the default timeout value. Update the compile_timeout_in_ms property in koans/app/config/config.properties with a larger value and try again.
